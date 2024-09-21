@@ -13,7 +13,7 @@
 
 
 ;(area-of-circle 5)
-
+;; area-of-ring : number number  ->  number
 (define (area-of-ring outer inner)
   (- (area-of-circle outer)
      (area-of-circle inner)))
@@ -32,5 +32,22 @@
 
 (define Fahrenheit->Celsius (λ (f) (* (- f 32) (/ 5 9))))
 (Fahrenheit->Celsius 100)
+
+
+(define dollar-to-euro (λ (dollar) (* dollar 0.89)))
+
+
+(dollar-to-euro 50)
+
+
+(define traingle (λ (height length) (* (* height length) 0.5)))
+(traingle 10 20)
+
+(define convert (λ (x y z) (+ (* z 100) (* y 10) x)))
+(convert 1 2 3)
+
+(define PI 3.14)
+
+(* PI 2)
 
 
