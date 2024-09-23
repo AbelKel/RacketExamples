@@ -50,4 +50,50 @@
 
 (* PI 2)
 
+;; CONSTANTS
+(define cm-per-inch 2.54)
+(define inches-per-foot 12)
+(define feet-per-yard 3)
+(define yards-per-rod (+ 5 1/2))
+(define rods-per-furlong 40)
+(define furlongs-per-mile 8)
 
+
+(define inches->cm (λ (inches) (* inches cm-per-inch)))
+
+(inches->cm 1)
+
+(quote (2.1 2.2 3.1))
+(quote scheme)
+
+(define a 1)
+
+(if (= a 0) 0
+    (/ 1 a))
+
+(cond ((= a 0) 0)
+      ((= a 1) 1)
+      (else (/ 1 a)))
+
+
+
+(λ (r) (* 3.14 (sqr r)))
+((λ (r) (* 3.14 (sqr r)))10) ;; results in 314
+
+
+;; non tail recursive
+(define factorial
+  (λ (n)
+    (if (= n 1)
+        1
+        (* n (factorial (- n 1))))))
+(factorial 4)
+
+
+(define tail-factorial
+  (λ (n r)
+    (if (= n 1)
+        r
+        (tail-factorial (- n ) (* n r)))))
+
+(tail-factorial 6 1)
