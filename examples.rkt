@@ -1,25 +1,25 @@
 #lang racket
 
 
-(sqr 4)
-(max 10 15)
-(cos 0)
+;;(sqr 4)
+;;(max 10 15)
+;;(cos 0)
 
-(sqrt 1)
-(sqrt -1)
+;;sqrt 1)
+;;(sqrt -1)
 
 (define (area-of-circle r)
   (* pi (sqr r)))
 
 
-;(area-of-circle 5)
+;;; ;(area-of-circle 5)
 ;; area-of-ring : number number  ->  number
 (define (area-of-ring outer inner)
   (- (area-of-circle outer)
      (area-of-circle inner)))
 
 
-;(area-of-ring 5 3)
+(area-of-ring 5 3)
 
 (define add-one (λ (x)(+ x 1))) 
 ;(add-one 6)
@@ -29,6 +29,10 @@
     (add-one (add-one x))))
 
 (apply-twice add-one 6)
+
+;;add_one = lambda x : x + 1
+;;apply_twice = lambda x: add_one(add_one(x))
+;;print(apply_twice(3))
 
 (define Fahrenheit->Celsius (λ (f) (* (- f 32) (/ 5 9))))
 (Fahrenheit->Celsius 100)
@@ -61,7 +65,7 @@
 
 (define inches->cm (λ (inches) (* inches cm-per-inch)))
 
-(inches->cm 1)
+;;(inches->cm 1)
 
 (quote (2.1 2.2 3.1))
 (quote scheme)
@@ -77,8 +81,8 @@
 
 
 
-(λ (r) (* 3.14 (sqr r)))
-((λ (r) (* 3.14 (sqr r)))10) ;; results in 314
+;;(λ (r) (* 3.14 (sqr r)))
+;;((λ (r) (* 3.14 (sqr r)))10) ;; results in 314
 
 
 ;; non tail recursive
@@ -87,8 +91,7 @@
     (if (= n 1)
         1
         (* n (factorial (- n 1))))))
-(factorial 4)
-
+(eval (factorial 4))
 
 (define tail-factorial
   (λ (n r)
@@ -96,4 +99,15 @@
         r
         (tail-factorial (- n ) (* n r)))))
 
-(tail-factorial 6 1)
+;;(tail-factorial 6 1)
+
+
+(define L (list 1 2 3))
+;;(list 1 2 3)
+(cons 1 '(2 3))  ;; constructing a list 1 2 3
+
+
+(let ((a 2) (b 3))
+  (let ((a (+ a b)))
+  (+ a b))) ;; gives a value of 8
+
