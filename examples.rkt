@@ -111,3 +111,8 @@
   (let ((a (+ a b)))
   (+ a b))) ;; gives a value of 8
 
+(define my-list '(1 2 3 4))
+(car my-list)  ; returns 1
+(cdr my-list)
+
+
